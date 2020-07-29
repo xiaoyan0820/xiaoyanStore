@@ -21,7 +21,7 @@
 
 <script>
 import { Toast } from 'vant'
-import { getgoodsinfo } from '../util/axios'
+import { getgoodsinfo ,cartadd} from '../util/axios'
 export default {
     data() {
         return {
@@ -51,8 +51,22 @@ export default {
             let isLogin =JSON.parse(sessionStorage.getItem('userInfo')) ? true: false
             if(isLogin){
                 //调取加入购物车方法
+                cartadd({
+                    uid:JSON.parse(sessionStorage.getItem('userInfo')).uid,
+                    goodsid:this.$route.id,
+                    num:1,
+                }).then((res)=>{
+                    if(res.code == 200){
+                        Toast(res.msg);
+                        //跳购物车
+                        this.$route.push('/car')
+                    }else{
+                        Toast(res.msg)
+                    }
+                })
                 console.log('加入购物车')
             }else{
+                this.$route.push('/login')
                 Toast('请先登录')
             }
         },
