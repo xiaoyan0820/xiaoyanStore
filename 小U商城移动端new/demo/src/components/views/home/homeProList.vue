@@ -56,6 +56,8 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
+import { getbanner, getseckill, getindexgoods } from '../../../util/axios'
 export default {
   data() {
     return {
@@ -74,9 +76,11 @@ export default {
   methods: {
     //封装一个获取商品列表事件
     getproList() {
-      this.$http.get("/api/api/getindexgoods").then((res) => {
-        if (res.data.code == 200) {
-          let proListBig = res.data.list;
+      //this.$http.get("/api/api/getindexgoods")
+      getindexgoods()
+      .then((res) => {
+        if (res.code == 200) {
+          let proListBig = res.list;
            this.hotsList = proListBig[0].content
                 this.newsList = proListBig[1].content
                 this.goodsList = proListBig[2].content
@@ -88,23 +92,6 @@ export default {
         }
 
         console.log(this.proList, "商品详情列表");
-      });
-    },
-    //封装一个获取商品详情id事件
-
-    //封装一个获取商品详情事件
-    getGoodsInfo(id) {
-      console.log(id);
-      // this.$http.get("'http://localhost:3000/api/getgoodsinfo?id='+id").then(res=>{
-      //   console.log(res)
-      // })
-      this.$http.get("/api/api/getgoodsinfo", { id }).then((res) => {
-        console.log(res);
-        if (res.data.code == 200) {
-          console.log(res, "4455");
-          let proList11 = res.data.list;
-          console.log(proList11, "2233");
-        }
       });
     },
   },

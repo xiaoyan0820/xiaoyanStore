@@ -38,6 +38,7 @@
   </div>
 </template>
 <script>
+import { register } from '../../util/axios'
 export default {
   data() {
     return {
@@ -51,8 +52,8 @@ export default {
   methods: {
     //封装一个会员添加方法
     register() {
-      this.$http.post("/api/api/register", this.registerInfo).then((res) => {
-        if (res.data.code == 200) {
+       register(this.registerInfo).then((res) => {
+        if (res.code == 200) {
           console.log(res, "1111");
           alert("会员注册成功");
           this.$router.push("/login");

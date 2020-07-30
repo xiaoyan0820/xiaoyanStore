@@ -74,7 +74,7 @@ export default {
     //封装一个跳转详情方法
     goDetail(id) {
       this.$router.push({
-        path: "proDetail",
+        path: "/proDetail",
         query: {
           id,
         },

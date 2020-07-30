@@ -7,9 +7,9 @@
         </h3>
         <p class="des">每天零点场 好货秒不停</p>
         <p class="time">
-          <span>19</span>:
-          <span>30</span>:
-          <span>29</span>
+          <span ref="hour"></span>:
+          <span ref="minute"></span>:
+          <span ref="seconds"></span>
           <i>秒杀</i>
         </p>
         <img class="pic" :src="img2" alt />
@@ -49,6 +49,8 @@
   </div>
 </template>
 <script>
+import axios from "axios";
+import { getbanner, getseckill, getindexgoods } from "../../../util/axios";
 export default {
   data() {
     return {
@@ -70,13 +72,37 @@ export default {
   methods: {
     //封装秒杀接口
     getSeckill() {
-      this.$http.get("/api/api/getseckill").then((res) => {
-        if (res.data.code == 200) {
-          let seckList = res.data.list;
+      getseckill().then((res) => {
+        if (res.code == 200) {
+          let seckList = res.list;
           console.log(seckList, "秒杀列表");
-          this.start = seckList.begintime;
-          this.end = seckList.endtime;
-          let timer = this.end - new Date().getTime();
+          this.start = seckList[0].begintime;
+          this.end = seckList[0].endtime;
+          let timer = this.end - new Date().getTime() / 1000;
+          console.log(this.start, this.end, timer);
+          let t = setInterval(() => {
+            timer--;
+            // 将时间差换算成 分 和 秒
+            let theHours = 0;
+            let theMinutes = Math.floor((timer / 60) % 60);
+            let theSeconds = Math.floor(timer % 60);
+
+            if (theMinutes < 0) {
+              clearInterval(t);
+            }
+            console.log(theMinutes,theSeconds)
+            this.$refs.hour.innerHTML="0" + theHours
+              this.$refs.minute.innerHTML=theMinutes < 10 ? "0" + theMinutes : theMinutes
+              this.$refs.seconds.innerHTML=theSeconds < 10 ? "0" + theSeconds : theSeconds
+            // 渲染倒计时效果
+            // $("#downHours").html("0" + theHours);
+            // $("#downMinutes").html(
+            //   theMinutes < 10 ? "0" + theMinutes : theMinutes
+            // );
+            // $("#downSeconds").html(
+            //   theSeconds < 10 ? "0" + theSeconds : theSeconds
+            // );
+          }, 1000);
         }
       });
     },

@@ -2,9 +2,6 @@
   <div class="container">
     <div class="header">
       <div class="wrap">
-        <!-- <div class="cart">
-                    <img src="../../assets/images/classify/images/cart_03.jpg" alt="">
-        </div>-->
         <go-back></go-back>
         <p>购物车</p>
         <div class="points">
@@ -20,7 +17,7 @@
           <i></i>
           <img :src="'http://localhost:3000/'+item.img" alt />
           <div class="des">
-            <p class="name">{{item.goodsname}</p>
+            <p class="name">{{item.goodsname}}</p>
             <p class="price">
               <span>¥</span>
               {{item.price}}
@@ -58,23 +55,22 @@
   </div>
 </template>
 <script>
-import {cartlist} from "../../util/axios";
+import { cartlist,cartdelete } from "../../util/axios";
 export default {
   data() {
     return {
-       carList: [],
+      carList: [],
     };
   },
-   mounted() {
-        this.getCarList()
-    },
+  mounted() {
+    this.getCarList();
+  },
   methods: {
-    //获取购物车列表
     getCarList() {
       cartlist({
         uid: JSON.parse(sessionStorage.getItem("userInfo")).uid,
       }).then((res) => {
-         console.log(res, "返回值");
+        console.log(res, "返回值");
         if (res.code == 200) {
           console.log(res, "返回值");
           this.carList = res.list;
@@ -82,16 +78,18 @@ export default {
             item.status = item.status == 1 ? true : false;
           });
         } else {
-          
         }
       });
     },
     //购物车删除
-    del() {
-      this.$http.post("/api/api/cartdelete", { id }).then((res) => {
-        if (res.data.code == 200) {
+    del(id) {
+     cartdelete({id}).then((res) => {
+       console.log(id)
+       console.log(res,'删除')
+        if (res.code == 200) {
           alert("删除成功");
           //重新获取购物车列表
+           this.getCarList();
         }
       });
     },
@@ -100,7 +98,7 @@ export default {
     if (sessionStorage.getItem("userInfo")) {
       next();
     } else {
-      alert("请先登录,才能查看购物车");
+      Toast("请先登录,才能查看购物车");
       //直接给用户跳转到购物车
       next("/login");
     }

@@ -28,14 +28,6 @@
         <img :src="img2" />
       </span>
     </div>
-    <!-- <div class="banner">
-      <a href="#" v-for="(item) in bannerList" :key="item.id">
-        <img :src="'http://localhost:3000/'+item.img" alt />
-      </a>
-      <!-- <a href="#">
-        <img :src="img4" alt />
-      </a> -->
-    <!-- </div> --> -->
      <!-- 轮播图 -->
         <van-swipe class="my-swipe banner" :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for="(item) in bannerList" :key="item.id">
@@ -60,6 +52,8 @@ import item from "./item";
 import homeSale from "./homeSale";
 //import homePro from "./homePro";
 import homeProList from "./homeProList";
+import axios from 'axios'
+import { getbanner, getseckill, getindexgoods, getcatetree } from '../../../util/axios'
 export default {
   data() {
     return {
@@ -105,26 +99,25 @@ export default {
     //组件一加载就调取分类接口
     //触发才调取vuex中的分类列表
    // this.getActionBannerList();
-    this.getNavLIst();
+   // this.getNavLIst();
     this.getBannerList();
+    this.getCateTree() 
   },
   methods: {
-    //调取分类接口
-    getNavLIst() {
-     this.$http.get("/api/api/getcate")
-      .then(res=>{
-          if (res.data.code == 200) {
-            this.navList = res.data.list;
-          }
-          console.log(this.navList, "分类列表");
-      })
-    },
+     getCateTree() {
+            getcatetree().then((res) => {
+                if (res.code == 200) {
+                    this.navList = res.list
+                }
+            })
+        },
     //调取轮播图接口
     getBannerList(){
-      this.$http.get("api/api/getbanner")
+      // this.$http.get("api/api/getbanner")
+      getbanner()
       .then(res=>{
-        if(res.data.code == 200){
-          this.bannerList = res.data.list;
+        if(res.code == 200){
+          this.bannerList = res.list;
           console.log(this.bannerList, '轮播图列表')
         }
       })

@@ -29,6 +29,7 @@
   </div>
 </template>
 <script>
+import {login} from '../../util/axios'
 export default {
   data() {
     return {
@@ -41,10 +42,10 @@ export default {
   methods: {
     //调取登录接口
     getLogin() {
-      this.$http.post("/api/api/login", this.userInfo).then((res) => {
-        if (res.data.code == 200) {
+       login(this.userInfo).then((res) => {
+        if (res.code == 200) {
           //把登录信息存储到本地存储中
-          sessionStorage.setItem("userInfo", JSON.stringify(res.data.list));
+          sessionStorage.setItem("userInfo", JSON.stringify(res.list));
           //登录成功之后就要跳转到index
           alert('登录成功')
           this.$router.push("/home");
