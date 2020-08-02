@@ -1,0 +1,119 @@
+.content{
+    width: 100%;
+}
+.content .bg{
+    position: relative;
+    padding-top: 38.9%;
+    overflow: hidden;
+    background-size: contain;
+    background:url(../images//hot_music_bg_2x.jpg)
+}
+.content .bg .bgLeft{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.content .bg .bgLeft .title{
+    margin-top: .22rem;
+    width: 142px;
+    height: 67px;
+    /* background-position: -24px -30px; */
+    background: url(../images//播放按钮.png) -24px -30px;
+    background-size: 166px 97px;
+}
+.content .bg .bgLeft .hottime{
+    margin-top: 10px;
+    color: hsla(0,0%,100%,.8);
+    font-size: 12px;
+}
+.content .songsList .songs{
+    display: flex;
+    padding-left: 10px;
+    color: #333;
+    margin-bottom: .1rem;
+    border-bottom: 1px solid rgba(0,0,0,.1);;
+}
+.content .songsList .songs li{
+    flex: 1 1 auto;
+    display: flex;
+    position: relative;
+ 
+}
+.content .songsList .songs li .left{
+    padding: .3rem 0 5px 0;
+    width: 0;
+    flex: 1 1 auto;
+    margin: 0;
+    vertical-align: center;
+    height: .6rem;
+    position: relative;
+    bottom: .13rem;
+}
+.content .songsList .songs li .left .innLeft{
+    display: inline-block;
+    vertical-align: center;
+    width: 3rem;
+    height: .8rem;
+   
+}
+.content .songsList .songs li .left .name{
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    /* display: inline-block; */
+}
+.content .songsList .songs li .left .author{
+    font-size: 12px;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
+.content .songsList .songs li .left .num{
+    width: 40px;
+    font-size: 17px;
+    color: #999;
+    margin-left: 0px;
+    display: inline-block;
+    vertical-align: center;
+    position: relative;
+    bottom: .15rem;
+}
+.content .songsList .songs li .left .num:nth-child(1){
+    color: #d33a31;
+}
+.content .songsList .songs li .left .num:nth-child(2){
+    color: #d33a31;
+}
+.content .songsList .songs li .left .num:nth-child(3){
+    color: #d33a31;
+}
+.content .songsList .songs li .left .author .sq{
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    background: url(../images/播放按钮.png) no-repeat;
+    background-size: 166px 97px
+}
+.content .songsList .songs li .right{
+    align-items: center;
+    padding: 0 10px;
+    vertical-align: center;
+}
+.content .songsList .songs li .right .play{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    /* background-position: -24px 0; */
+    background: url(../images/播放按钮.png) no-repeat -24px 0;
+    background-size: 166px 97px
+}
