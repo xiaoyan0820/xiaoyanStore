@@ -1,0 +1,73 @@
+.content{
+    width: 100%;
+}
+.content .form{
+    padding: 15px 10px;
+    position: relative;
+}
+.content .inputText{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    background: #ebecec;
+    border-radius: 30px;
+}
+.content .inputText .icon{
+    position: absolute;
+    left: 0;
+    top: 9px;
+    margin: 0 8px;
+    vertical-align: middle;
+    width: 13px;
+    height: 13px;
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background: url('../images/搜索图标.svg');
+}
+.content .inputText .search{
+    width: 100%;
+    height: 30px;
+    line-height: 18px;
+    background: rgba(0,0,0,0);
+    font-size: 14px;
+    color: #333;
+    border: none;
+    position: absolute;
+    top: 2px;
+}
+.content .hotSearch{
+    padding: 15px 10px 0;
+}
+.content .hotSearch h3{
+    font-size: 12px;
+    line-height: 12px;
+    color: #666;
+}
+.content .hotSearch ul{
+    margin: -17px 0 7px;
+}
+.content .hotSearch ul .link{
+    /* display: inline-block; */
+    height: 32px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #333;
+    position: relative;
+   
+}
+.content .hotSearch ul .active{
+    display: inline-block;
+    /* border-color: #d3d4da; */
+    border-radius: 32px;
+    border: 1px solid #d3d4da;
+    height: 32px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
