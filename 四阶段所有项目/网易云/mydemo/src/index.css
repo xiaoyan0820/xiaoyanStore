@@ -1,0 +1,484 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.homeCom .titleList {
+  display        : flex;
+  justify-content: space-around;
+}
+
+.homeCom .titleList li {
+  flex         : 1;
+  display      : block;
+  width        : 30%;
+  height       : 100%;
+  text-align   : center;
+  cursor       : pointer;
+  color        : #dd001b;
+  display      : block;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+  position     : relative;
+
+
+}
+
+.homeCom .titleList li a {
+  display    : inline-block;
+  max-width  : 100%;
+  height     : 100%;
+  padding    : 0 5px;
+  box-sizing : border-box;
+  color      : #333;
+  font-size  : 15px;
+  line-height: 40px;
+}
+
+.homeCom .titleList .select {
+  color        : #dd001b;
+  border-bottom: 2px solid #dd001b;
+}
+
+.homeCom .header {
+  position          : relative;
+  width             : 100%;
+  height            : 0;
+  padding-bottom    : 84px;
+  -webkit-transition: padding-bottom .3s;
+  transition        : padding-bottom .3s;
+}
+
+.homeCom .header .topfix {
+  position               : fixed;
+  top                    : 0;
+  left                   : 0;
+  z-index                : 100;
+  display                : -webkit-box;
+  display                : -webkit-flex;
+  display                : -ms-flexbox;
+  display                : flex;
+  -webkit-box-pack       : justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack          : justify;
+  justify-content        : space-between;
+  -webkit-box-align      : center;
+  -webkit-align-items    : center;
+  -ms-flex-align         : center;
+  align-items            : center;
+  padding                : 0 10px;
+  width                  : 100%;
+  height                 : 84px;
+  background-color       : #d43c33;
+  box-sizing             : border-box;
+}
+
+.homeCom .header .topfix .topfl {
+  position: relative;
+  width   : 142px;
+  height  : 25px;
+}
+
+.homeCom .header .topfix .topfl .topplh {
+  color      : #fff;
+  font       : 26px/30px '微软雅黑';
+  margin-left: 10px;
+}
+
+.homeCom .header .topfix .topfr {
+  border: 1px;
+}
+
+.homeCom .header .topfix .topfr .topbton {
+  position        : relative;
+  display         : inline-block;
+  height          : 36px;
+  line-height     : 36px;
+  font-size       : 16px;
+  width           : 100px;
+  text-align      : center;
+  color           : #d43c33;
+  background-color: #fff;
+  border-radius   : 37.5%/100%;
+}
+
+.homeCom .homeReccom {
+  padding-top: 20px;
+}
+
+.homeCom .homeReccom .remd_tl {
+  position     : relative;
+  padding-left : 9px;
+  margin-bottom: 14px;
+  font-size    : 17px;
+  height       : 20px;
+  line-height  : 20px;
+  border-left  : 2px solid #d43c33;
+}
+
+.homeCom .homeReccom .remd_songs {
+  position      : relative;
+  padding-bottom: 24px;
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul {
+  display          : -webkit-box;
+  display          : -webkit-flex;
+  display          : flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap    : wrap;
+  flex-wrap        : wrap;
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li {
+  display      : block;
+  margin-bottom: 16px;
+  float        : left;
+  width        : 33.3%;
+  padding-left : 1px;
+  padding-right: 1px;
+  box-sizing   : border-box;
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li:first-child {
+  padding-left : 0;
+  padding-right: 2px;
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li .remd_img {
+  position      : relative;
+  padding-bottom: 100%;
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li .remd_img .u-img {
+  position      : absolute;
+  width         : 100%;
+  left          : 0;
+  top           : 0;
+  z-index       : 1;
+  vertical-align: middle;
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li .remd_img .u-earap {}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li .remd_img .remd_lnum {
+  position           : absolute;
+  right              : 5px;
+  top                : 2px;
+  z-index            : 3;
+  padding-left       : 13px;
+  color              : #fff;
+  font-size          : 12px;
+  background-position: 0;
+  background-repeat  : no-repeat;
+  background-size    : 11px 10px;
+  text-shadow        : 1px 0 0 rgba(0, 0, 0, .15);
+}
+
+.homeCom .homeReccom .remd_songs .remd_ul .remd_li .remd_text {
+  display           : -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow          : hidden;
+  padding           : 6px 2px 0 6px;
+  min-height        : 30px;
+  line-height       : 1.2;
+  font-size         : 13px;
+}
+
+
+.homeCom .homeReccom .remd_newsg {
+  position  : relative;
+  min-height: 20px;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst,
+.homeCom .m-hmhot .m-sglst {
+  position: relative;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem,
+.homeCom .m-hmhot .m-sglst .m-sgitem {
+  color       : #333;
+  display     : -webkit-box;
+  display     : -webkit-flex;
+  display     : -ms-flexbox;
+  display     : flex;
+  padding-left: 10px;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .sgfr,
+.homeCom .m-hmhot .m-sgitem .sgfr {
+  display         : -webkit-box;
+  display         : -webkit-flex;
+  display         : -ms-flexbox;
+  display         : flex;
+  position        : relative;
+  -webkit-box-flex: 1;
+  -webkit-flex    : 1 1 auto;
+  -ms-flex        : 1 1 auto;
+  flex            : 1 1 auto;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd {}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm {}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl,
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl {
+  padding: 6px 0;
+  width  : 100%;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .sgtl,
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sgtl {
+  font-size: 17px;
+  width    : 100%;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .f-thide,
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .f-thide {
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+  word-break   : normal
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo,
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo {
+  font-size: 12px;
+  color    : #888;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo .sghot,
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo .sghot {
+  display     : inline-block;
+  width       : 12px;
+  height      : 8px;
+  margin-right: 4px;
+}
+
+.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfr,
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfr {
+  display            : -webkit-box;
+  display            : -webkit-flex;
+  display            : -ms-flexbox;
+  display            : flex;
+  -webkit-box-align  : center;
+  -webkit-align-items: center;
+  -ms-flex-align     : center;
+  align-items        : center;
+  padding            : 0 10px;
+}
+
+
+
+
+
+
+
+/*热歌榜*/
+
+.m-hmhot {}
+
+.m-hmhot .hotop {
+  position       : relative;
+  padding-top    : 38.9%;
+  overflow       : hidden;
+  background     : url(http://s3.music.126.net/mobile-new/img/hot_music_bg_2x.jpg?f01a252…=) no-repeat;
+  background-size: contain;
+}
+
+.m-hmhot .hotop .hotopct {
+  display                : -webkit-box;
+  display                : -webkit-flex;
+  display                : -ms-flexbox;
+  display                : flex;
+  -webkit-box-orient     : vertical;
+  -webkit-box-direction  : normal;
+  -webkit-flex-direction : column;
+  -ms-flex-direction     : column;
+  flex-direction         : column;
+  -webkit-box-pack       : center;
+  -webkit-justify-content: center;
+  -ms-flex-pack          : center;
+  justify-content        : center;
+  position               : absolute;
+  left                   : 0;
+  right                  : 0;
+  top                    : 0;
+  bottom                 : 0;
+  z-index                : 2;
+  padding-left           : 20px;
+  box-sizing             : border-box;
+}
+
+.m-hmhot .hotop .hoticon {
+  width : 142px;
+  height: 67px;
+}
+
+.m-hmhot .hotop .u-hmsprt {
+  background         : url(http://s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28…=) no-repeat;
+  background-size    : 166px 97px;
+  background-position: -24px -30px;
+}
+
+.m-hmhot .hotop .hottime {
+  margin-top              : 10px;
+  color                   : hsla(0, 0%, 100%, .8);
+  font-size               : 12px;
+  -webkit-transform       : scale(.91);
+  -ms-transform           : scale(.91);
+  transform               : scale(.91);
+  -webkit-transform-origin: left top;
+  -ms-transform-origin    : left top;
+  transform-origin        : left top;
+}
+
+.m-hmhot .hotcont {
+  position: relative;
+}
+
+.m-hmhot .hotcont .m-sglst {
+  position: relative;
+}
+
+.m-hmhot .hotcont .m-sglst .sgfl {
+  -webkit-box-align      : center;
+  -webkit-align-items    : center;
+  -ms-flex-align         : center;
+  align-items            : center;
+  -webkit-box-pack       : center;
+  -webkit-justify-content: center;
+  -ms-flex-pack          : center;
+  justify-content        : center;
+  width                  : 40px;
+  font-size              : 17px;
+  color                  : #999;
+  margin-left            : -10px;
+  display: flex;
+}
+
+.m-hmhot .hotcont .m-sglst .sgfl-cred {
+  color: #df3436;
+}
+
+
+.m-hmsrch{background: #fbfcfd;}
+.m-hmsrch .m-input{padding: 15px 10px;}
+
+.m-input .u-svg-srch {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+.m-input .inputcover {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  background: #ebecec;
+  border-radius: 30px;
+}
+.m-input .input {
+  width: 100%;
+  height: 30px;
+  line-height: 18px;
+  background: rgba(0,0,0,0);
+  font-size: 14px;
+  color: #333;
+}
+.m-input .holder {
+  position: absolute;
+  left: 30px;
+  top: 5px;
+  font-size: 14px;
+  color: #c9c9c9;
+  background: rgba(0,0,0,0);
+  pointer-events: none;
+}
+.m-hotlist {
+  padding: 15px 10px 0;
+}
+
+.m-hotlist .title {
+  font-size: 12px;
+  line-height: 12px;
+  color: #666;
+}
+.m-hotlist .list {
+  margin: 10px 0 7px;
+}
+.m-hotlist .item {
+  border-radius: 50%;
+  display: inline-block;
+  height: 32px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  line-height: 32px;
+  color: #333;
+}
+
+a, a:visited {
+  color: #333;
+}
+.f-bd:after {
+  position: absolute;
+  z-index: 2;
+  content: "";
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  border: 0 solid rgba(0,0,0,.1);
+}
+.f-bd-full:after {
+  border-width: 1px;
+}
+.m-hotlist .item:after {
+  border-radius: 60px;
+}
+
+
+
+
+label, summary {
+  cursor: default;
+}
+.f-bd {
+  position: relative;
+}
+
+.u-svg {
+  display: inline-block;
+  vertical-align: middle;
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.u-svg-srch {
+  width: 13px;
+  height: 13px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjYzljOWNhIiBkPSJNMjUuMTgxIDIzLjUzNWwtMS40MTQgMS40MTQtNy4zMTUtNy4zMTRBOS45NjYgOS45NjYgMCAwIDEgMTAgMjBDNC40NzcgMjAgMCAxNS41MjMgMCAxMFM0LjQ3NyAwIDEwIDBzMTAgNC40NzcgMTAgMTBjMCAyLjM0Mi0uODExIDQuNDktMi4xNiA2LjE5NWw3LjM0MSA3LjM0ek0xMCAyYTggOCAwIDEgMCAwIDE2IDggOCAwIDAgMCAwLTE2eiIvPjwvc3ZnPg==);
+}
